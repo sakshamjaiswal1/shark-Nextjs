@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Lateef&family=Poppins:ital,wght@0,100;0,200;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+.mainCon{
+  background-color: #222529;
+
+}
+.tilesCon{
+  color: #FFFFFF;
+  font-family:'Poppins';
+  font-size: 1rem;
+  font-weight: 200;
+  padding: 2rem  1rem;
+  width: 21.25rem;
+}
+.tilesCon h3{
+  font-size: 1rem;
+  font-weight: 400;
+}
+.tilesCon__topCon{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.custom_select{
+  position: relative;
+}
+.select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;      
+  background-color: #222529;
+  color: #FFFFFF;
+  font-size: 1rem;
+  font-weight: 400;
+  padding: 0.1rem 1rem;
+  border-radius: 5px;
+  height: 31px;
+  width: 82px;
+}
+.tilesCon__midCon{
+  display: grid;
+  grid-gap: 0.8rem;
+  grid-template-rows: 1fr ;
+}
+.tiles{
+  height: 66px;
+  width: 339px;
+  background-color: #313741;
+  border-radius: 5px;
+  border-right: 5px solid #1DB448;
+  display: grid;
+  grid-template-columns: 21px 1fr 1fr;
+  color: #FFFFFF;
+  align-items: flex-start;
+}
+.tiles__mid{
+display: flex;
+justify-content: space-around;
+align-items:flex-start;
+padding: 0.5rem;
+/* margin: 0.5rem; */
+}
+/* .tiles__mid img{
+  margin: 1rem;
+} */
+.tiles__mid h4{
+  font-size: 14px;
+  font-weight: 400;
+  color: #1DB448;
+  opacity: 100%;
+  margin: 0px;
+}
+.tiles__mid h4 span {
+  color: #FFFFFF;
+  opacity: 50%;
+}
+.tiles__right{
+  display: flex;
+  flex-direction: column;
+}
