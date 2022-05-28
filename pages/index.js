@@ -1,17 +1,29 @@
 import Head from "next/head";
 import Image from "next/image";
 import styles from "../styles/Home.module.css";
+import Tile from "../component/Tile";
 
 export default function Home() {
   return (
     <div className={styles.mainCon}>
       <div className={styles.tilesCon}>
         <div className={styles.tilesCon__topCon}>
-          <h3>Listings (33)</h3>
+          <h3>Listings (50)</h3>
 
           <div className={styles.custom_select}>
             <select name="" id="" className={styles.select}>
-              <option value="">Date</option>
+              <option value="">
+                {" "}
+                <span>
+                  <Image
+                    src="/list.png"
+                    alt="Picture of the author"
+                    width="8px"
+                    height="8px"
+                  />
+                </span>{" "}
+                Date
+              </option>
               <option value="">Price</option>
               <option value="">Rank</option>
             </select>
@@ -19,54 +31,16 @@ export default function Home() {
         </div>
 
         <div className={styles.tilesCon__midCon}>
-          <div className={styles.tiles}>
-            <div className="">
-              {" "}
-              <Image
-                src="/ff.png"
-                alt="Picture of the author"
-                width={600}
-                height={1800}
-              />
-            </div>
-            <div className={styles.tiles__mid}>
-              {" "}
-              <Image
-                src="/Shark.png"
-                alt="Picture of the author"
-                width="53px"
-                height="53px"
-              />
-                <h4> <span>Rank:</span>450</h4>
-            </div>
-            <div className=""></div>
-          </div>
-          <div className={styles.tiles}>
-            <div className={styles.tiles__right}>
-              {" "}
-              <Image
-                src="/ff.png"
-                alt="Picture of the author"
-                width={600}
-                height={1800}
-              />
-            </div>
-            <div className="">x</div>
-            <div className="">x</div>
-          </div>
-          <div className={styles.tiles}>
-            <div className="">
-              {" "}
-              <Image
-                src="/ff.png"
-                alt="Picture of the author"
-                width={600}
-                height={1800}
-              />
-            </div>
-            <div className=""> </div>
-            <div className="">x</div>
-          </div>
+          <Tile />
+          <Tile />
+          <Tile />
+          <Tile />
+          <Tile />
+          <Tile />
+          <Tile />
+          <Tile /> 
+          <Tile />
+          <Tile />
         </div>
       </div>
     </div>
