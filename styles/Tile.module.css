@@ -16,9 +16,22 @@
   padding: 0.5rem;
   /* margin: 0.5rem; */
   }
-  /* .tiles__mid img{
-    margin: 1rem;
-  } */
+  .tiles__mid div span img{
+  border-radius: 6px;
+  z-index: 1;
+   
+    }
+    .tiles__mid div p{
+      color:var(--text);
+      z-index: 2;
+      margin: 0;
+      position: relative;
+      top: -25px;
+      left: 8px;
+      font-size: 11px;
+      font-weight: 400;
+      
+    }
   .tiles__mid h4{
     font-size: 14px;
     font-weight: 400;
@@ -53,6 +66,11 @@
   height: 23px;
   width: 42px;
   margin: 0 0.5rem;
+  cursor: pointer;
+  }
+  .tiles__right div button:hover{
+    color: var(--text);
+    background-color: var(--buttonText);
   }
   .tiles__right h4{
     margin: 0;
