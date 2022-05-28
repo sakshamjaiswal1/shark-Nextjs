@@ -16,12 +16,16 @@
 .tilesCon h3{
   font-size: 1rem;
   font-weight: 400;
+  display: flex;
+  padding: 0 0.3rem 0 0;
+  align-items: center;
 }
 .tilesCon__topCon{
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
+
 .custom_select{
   position: relative;
 }
@@ -48,4 +52,20 @@ background-position: right bottom;
   display: grid;
   grid-gap: 0.8rem;
   grid-template-rows: 1fr ;
+}
+.btn_Container{
+ display: flex;
+ justify-content: space-around;
+ align-items: center;
+ padding: 1rem 0;
+}
+.btn_Container button{
+  color:var(--buttonText);
+  background-color: var(--back);
+  border: 1px solid var(--buttonText);
+  border-radius: var( --radiusButton);
+  height: 23px;
+  width: 42px;
+  margin: 0 0.4rem;
+  cursor: pointer;
 }
