@@ -1,3 +1,9 @@
+:root {
+  --back: #222529;
+  --buttonText: #3290FF;
+  --text:#FFFFFF;
+  --radiusButton:5px;
+}
 html,
 body {
   padding: 0;
