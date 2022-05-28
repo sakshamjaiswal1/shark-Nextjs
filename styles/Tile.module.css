@@ -56,7 +56,7 @@
   .tiles__right span{
     font-size: 15px;
     font-weight: 400;
-    margin: 0 0.3rem;
+    margin: 0 0.2rem;
   }
   .tiles__right div button{
   color:var(--buttonText);
@@ -65,7 +65,7 @@
   border-radius: var( --radiusButton);
   height: 23px;
   width: 42px;
-  margin: 0 0.5rem;
+  margin: 0 0.4rem;
   cursor: pointer;
   }
   .tiles__right div button:hover{

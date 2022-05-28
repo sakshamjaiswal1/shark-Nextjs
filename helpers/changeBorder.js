@@ -1,3 +1,5 @@
+
+
 export const changeBorder = (nature, setBorder) => {
     switch (nature) {
         case null || 0:
@@ -13,20 +15,20 @@ export const changeBorder = (nature, setBorder) => {
             setBorder("#FF4747");
             break;
         default:
-            setBorder("C7C6C6");
+            setBorder("#C7C6C6");
     }
 };
 
 export const changeMaret = (marketCode, setMarketPlace) => {
     switch (marketCode) {
         case 1:
-            setMarketPlace("/open.png");
+            setMarketPlace('/open.png');
             break;
         case 2:
-            setMarketPlace("/rare.png");
+            setMarketPlace('/rare.png');
             break;
         default:
-            setMarketPlace("/open.png");
+            setMarketPlace('/open.png');
     }
 };
 
@@ -65,5 +67,21 @@ export const changeListingTime = (listingtime, setNewTime) => {
         setNewTime('approximately ' + Math.round(elapsed / msPerYear) + ' years ago')
     }
 
+
+}
+
+export const checkProfit=(price,last_trade_event,setProfit)=>{
+    if(last_trade_event===null){
+        setProfit('/green.png')
+        return
+    }
+    else if(price>last_trade_event.price?last_trade_event.price:0){
+        setProfit('/red.png')
+        return
+    }
+    else{
+        setProfit('/green.png')
+        return
+    }
 
 }
