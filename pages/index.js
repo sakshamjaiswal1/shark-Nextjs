@@ -14,8 +14,19 @@ export default function Home() {
             <select name="" id="" className={styles.select}>
               <option value="">
                 {" "}
+<<<<<<< HEAD
              
             
+=======
+                <span>
+                  <Image
+                    src="/list.png"
+                    alt="Picture of the author"
+                    width="8px"
+                    height="8px"
+                  />
+                </span>{" "}
+>>>>>>> 0b9bf1db4678631dcf821bc754b77eb60419156d
                 Date
               </option>
               <option value="">Price</option>
@@ -32,7 +43,11 @@ export default function Home() {
           <Tile />
           <Tile />
           <Tile />
+<<<<<<< HEAD
           <Tile />
+=======
+          <Tile /> 
+>>>>>>> 0b9bf1db4678631dcf821bc754b77eb60419156d
           <Tile />
           <Tile />
         </div>
