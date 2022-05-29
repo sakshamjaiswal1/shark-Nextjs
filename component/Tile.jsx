@@ -8,7 +8,7 @@ import {
   changeListingTime,
   checkProfit
 } from "../helpers/changeBorder";
-import { IMAGE, imageUrlGenerator } from "../constants/allUrl";
+import {  imageUrlGenerator } from "../constants/allUrl";
 
 const Tile = ({
   nature,
@@ -20,7 +20,7 @@ const Tile = ({
   last_trade_event,
   rank
 }) => {
-  // const IMAGE= `https://img.nftnerds.ai/0xed5af388653567af2f388e6224dc7c4b3241c544_1025_96x96`
+  const IMAGE= `https://img.nftnerds.ai/0xed5af388653567af2f388e6224dc7c4b3241c544_1025_96x96`
   const [boder, setBorder] = useState("#C7C6C6");
   const [marketplace, setMarketPlace] = useState('/open.png');
   const [newTime, setNewTime] = useState(listingtime);
@@ -65,9 +65,9 @@ const Tile = ({
       <div className={styles.tiles__right}>
         <div className="">
           <Image
-            src="/etherum.png"
+            src="/ether.png"
             alt="Picture of the author"
-            height="4px"
+            height="2px"
             width="10px"
           />
           <span>{(Math.round(price * 10) / 10).toFixed(1)}</span>
