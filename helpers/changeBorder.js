@@ -75,7 +75,8 @@ export const checkProfit=(price,last_trade_event,setProfit)=>{
         setProfit('/green.png')
         return
     }
-    else if(price>last_trade_event.price?last_trade_event.price:0){
+    
+    else if(price>last_trade_event?.price?last_trade_event.price:0){
         setProfit('/red.png')
         return
     }
@@ -83,5 +84,5 @@ export const checkProfit=(price,last_trade_event,setProfit)=>{
         setProfit('/green.png')
         return
     }
-
+debugger
 }

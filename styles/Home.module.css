@@ -27,24 +27,28 @@
 }
 
 .custom_select{
-  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .select {
-  -webkit-appearance: none;
-  /* -webkit-padding-start: 20px; */
-background-image: url("../public/Down.png");
-background-size: 25px 25px;
-background-repeat: no-repeat;
-background-position: right bottom;
 
-  border: 1px solid rgba(255, 255, 255, .2);
+background-image: url("../public/list.png");
+background-size: 16px 16px;
+background-repeat: no-repeat;
+background-position:5% center;
+border: 1px solid rgba(255, 255, 255, .2);
+border-radius: 5px;
+ 
+ 
   background-color: #222529;
   color: #FFFFFF;
   font-size: 1rem;
   font-weight: 400;
-  padding: 0.1rem 0.7rem;
+  padding: 0.1rem 0.1rem 0.1rem 1.3rem;
 
-  border-radius: 5px;
+ 
   height: 31px;
   width: 82px;
 }

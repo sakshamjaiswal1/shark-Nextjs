@@ -20,7 +20,7 @@ const Tile = ({
   last_trade_event,
   rank
 }) => {
-  const IMAGE= `https://img.nftnerds.ai/0xed5af388653567af2f388e6224dc7c4b3241c544_1025_96x96`
+  // const IMAGE= `https://img.nftnerds.ai/0xed5af388653567af2f388e6224dc7c4b3241c544_1025_96x96`
   const [boder, setBorder] = useState("#C7C6C6");
   const [marketplace, setMarketPlace] = useState('/open.png');
   const [newTime, setNewTime] = useState(listingtime);
@@ -34,7 +34,7 @@ const Tile = ({
     checkProfit(price,last_trade_event,setProfit)
  
  
-  }, []);
+  }, [contract_address, last_trade_event, listingtime, marketCode, nature, price, token_id]);
   return (
     <div className={styles.tiles} style={{ borderRight: `5px solid ${boder}` }}>
       <div className="">

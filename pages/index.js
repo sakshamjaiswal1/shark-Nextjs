@@ -5,66 +5,69 @@ import Tile from "../component/Tile";
 import { getData } from "./api/main";
 import { getRank } from "./api/rank";
 import { useEffect, useState } from "react";
+import {
+  insertArray,
+  rankSort,
+  timeSort,
+  priceSort,
+} from "../helpers/insertArray";
 
-export default function Home({ data ,rank}) {
+export default function Home({ data, rank }) {
   const [count, setCount] = useState(10);
-  
-  const [sel,setSel]=useState("date")
-  const [sortArray,setSortArrray]=useState(data.prices.slice(0,count).sort())
+
+  const [sel, setSel] = useState("");
+  const [sortArray, setSortArrray] = useState([]);
 
   useEffect(() => {
+    console.log(data,rank)
+    insertArray(data, rank, count, setSortArrray);
+  }, [count, data,rank]);
+  const handleSort = (e) => {
 
-    console.log(data,rank);
-  }, [data]);
-  const handleSort=(e)=>{
-   
-    if(e.target.value==='date'){
-      setSel('date')
-      setSortArrray(data.listing_times.slice(0,count).sort())
+    if (e.target.value === "date") {
+      setSel("date");
+      setSortArrray(sortArray.sort(timeSort));
+    } else if (e.target.value === "price") {
+      setSel("price");
+      setSortArrray(sortArray.sort(priceSort));
+    } else {
+      setSel("rank");
+      setSortArrray(sortArray.sort(rankSort));
     }
-    else if(e.target.value==='price'){
-      setSel('price')
-      setSortArrray(data.prices.slice(0,count).sort())
+  };
+  const increment = () => {
+    setCount(count + 10);
+  };
+  const decrement = () => {
+    if (count > 10) {
+      setCount(count - 10);
     }
-    else{
-      setSel('rank')
-    }
-  }
-  const increment =()=>{
-    setCount(count+10)
-
-  }
-  const decrement =()=>{
-    if(count>10){
-      setCount(count-10)
-  
-    }
-
-  }
-  const reset =()=>{
-    setCount(10)
-
-  }
+  };
+  const reset = () => {
+    setCount(10);
+  };
   return (
     <div className={styles.mainCon}>
       <div className={styles.tilesCon}>
         <div className={styles.tilesCon__topCon}>
-        
-          <h3>Listings ({count}) &nbsp; <Image
-          src='/info.png'
-          alt="Picture of the author"
-          width={16}
-          height={16}
-          padding={5}
-          className={styles.indoImg}
-        /> </h3>
-         
-           
-            
-           
+          <h3>
+            Listings ({count}) &nbsp;{" "}
+            <Image
+              src="/info.png"
+              alt="Picture of the author"
+              width={16}
+              height={16}
+              padding={5}
+              className={styles.indoImg}
+            />{" "}
+          </h3>
 
           <div className={styles.custom_select}>
-            <select value={sel}  onChange={(e)=>handleSort(e)} className={styles.select}>
+            <select
+              value={sel}
+              onChange={(e) => handleSort(e)}
+              className={styles.select}
+            > 
               <option value="date"> Date</option>
               <option value="price">Price</option>
               <option value="rank">Rank</option>
@@ -73,26 +76,26 @@ export default function Home({ data ,rank}) {
         </div>
 
         <div className={styles.tilesCon__midCon}>
-          {data.prices.slice(0,count).map((elem, index) => {
-            
-            return(
+       
+          {sortArray?.map((elem, index) => (
             <>
-              <Tile key={data.token_ids.slice(0,count)[index]} nature={data.natures.slice(0,count)[index]} price={data.prices.slice(0,count)[index]} marketCode={data.marketplaces.slice(0,count)[index]}
-              listingtime={data.listing_times.slice(0,count)[index]}
-              token_id = {data.token_ids.slice(0,count)[index]}
-              contract_address={data.contract_address}
-              last_trade_event={data.last_trade_events.slice(0,count)[index]}
-              rank={rank.ranks[index][0]}
-              
+              <Tile
+                nature={elem.nature}
+                price={elem.price}
+                marketCode={elem.marketCode}
+                listingtime={elem.listingtime}
+                token_id={elem.token_id}
+                contract_address={elem.contract_address}
+                last_trade_event={elem.last_trade_event}
+                rank={elem.rank}
               />
-            </>)
-          })}
+            </>
+          ))}
         </div>
         <div className={styles.btn_Container}>
-          <button onClick={reset} >R</button>
-          <button onClick={decrement} >-</button>
-          <button onClick={increment} >+</button>
-
+          <button onClick={reset}>R</button>
+          <button onClick={decrement}>-</button>
+          <button onClick={increment}>+</button>
         </div>
       </div>
     </div>
@@ -100,6 +103,6 @@ export default function Home({ data ,rank}) {
 }
 export async function getServerSideProps() {
   const data = await getData();
-  const rank = await getRank()
-  return { props: { data,rank } };
+  const rank = await getRank();
+  return { props: { data, rank } };
 }
