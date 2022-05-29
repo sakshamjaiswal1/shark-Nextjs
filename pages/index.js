@@ -79,7 +79,7 @@ export default function Home({ data, rank }) {
        
           {sortArray?.map((elem, index) => (
             <>
-              <Tile
+              <Tile key={elem.token_id}
                 nature={elem.nature}
                 price={elem.price}
                 marketCode={elem.marketCode}
